@@ -1,0 +1,13 @@
+{
+    "project": [
+        {
+            "author": "Michael Peters",
+            "projectName": "MethowTrailsAPIRequest",
+            "version": "0.0.1",
+            "description": "testing the skitrails.info api and parsing the data",
+            "longDescription": "found an api that details the grooming status of the winter cross-country ski trails in the Methow Trails system",
+            "githubLink": "https://github.com/michaelpeterswa/MethowTrailsAPIRequest",
+            "date": "12.20.2019"
+        }
+    ]
+}
