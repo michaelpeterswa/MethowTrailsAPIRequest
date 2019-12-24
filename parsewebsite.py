@@ -9,10 +9,10 @@ dataPoints2 = []
 time = ""
 date = ""
 day = 0
-month = 0 
+month = 0
 year = 0
 hour = 0
-minute = 0 
+minute = 0
 second = 0
 am_pm = ""
 temperature = ""
@@ -42,11 +42,11 @@ def main():
 
         for val2 in vals2:
             dataPoints2.append(val2)
-        
-    host = ''
+
+    host = '192.168.0.22'
     port = 8086
-    user = ''
-    password = ''
+    user = 'root'
+    password = 'root'
     dbname = 'methow_trails'
 
     json_body = [
@@ -77,6 +77,9 @@ def main():
 
 def stripWhitespaceRegex(text):
     return re.sub(r'[\s+]', '', text)
+
+def stripNewlinesRegex(text):
+    return re.sub('/\r', '', text)
 
 def prettyPrinter(data, text):
     print(text + ": " + data)
@@ -180,7 +183,7 @@ def gatherGripWaxOfTheDay(data):
 
 def gatherTrailConditions(data):
     #ugliest line award
-    trailConditions = str(str(data).split("<p>")[0])[3:-1]
+    trailConditions = str(str(data).split("<p>")[0])[3:-1].rstrip()
     prettyPrinter(trailConditions, "Trail Conditions")
     return(trailConditions)
 
